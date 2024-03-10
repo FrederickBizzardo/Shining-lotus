@@ -1,5 +1,6 @@
 ---
 import MyComponent from '../components/myComponent';
+import '../assets/fonts.css';
 ---
 
 
@@ -10,9 +11,14 @@ import MyComponent from '../components/myComponent';
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<style>
+			@font-face {
+				font-family: 'Onest-Black';
+				src: url('/public/fonts/Onest/Onest-Black.ttf')
+			}
 			html,
 			body {
 				font-family: system-ui;
+				//font-family: "Onest-Black";
 				margin: 0;
 			}
 			body {

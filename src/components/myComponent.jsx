@@ -2,6 +2,7 @@ import React from 'react';
 // import axios from 'axios';
 
 import { JSDOM } from 'jsdom';
+import '../assets/fonts.css';
 
 // SHINING LIGHT
 
@@ -77,25 +78,32 @@ function Celebration() {
 
 return (
 
-  <div className="">
-      <div className="relative mx-0 mb-20">
-          <h1 className="font-black text-4xl">Shining Light</h1>
-      </div>
-      <div className="relative">
-          <h2 className="font-black text-2xl mt-30 mb-2">Day</h2>
-          <div className="flex inline">
-              <p className="italic mb-5">{titles.join(', ')}</p>
-              <img className=" w-1/3 rounded-lg" src={urls[3]} alt="First Image"/>
-          </div>
-      </div>
-      <div className="text-center">
-          <h1 className="font-black text-4xl mt-30 mb-2">Rosary</h1>
-          <p className="italic text-2xl">{rosary} Mysteries</p>
-          <audio controls>
-              <source src={rosaryDown} type="audio/mpeg"/>
-          </audio>
-      </div>
-  </div>
+    <div className="">
+
+        <div className="relative text-center mb-20">
+
+            <div className="h-screen w-screen bg-cover bg-center"
+                 style={{backgroundImage: `url('/images/jesus.jpeg')`}}></div>
+
+
+            <h1 className="absolute top-10 left-5 font-OnestB text-4xl text-white">Shining Light</h1>
+            <h1 className="absolute top-96 left-5 font-OnestB text-8xl text-white">Shining Bright</h1>
+        </div>
+        <div className="relative">
+            <h2 className="font-OnestB text-2xl mt-30 mb-2">Day</h2>
+            <div className="flex">
+            <p className="font-Onest italic mb-5">{titles.join(', ')}</p>
+                <img className=" w-1/3 rounded-lg" src={urls[3]} alt="First Image"/>
+            </div>
+        </div>
+        <div className="text-center">
+            <h1 className="font-black text-4xl mt-30 mb-2">Rosary</h1>
+            <p className="italic text-2xl">{rosary} Mysteries</p>
+            <audio controls>
+                <source src={rosaryDown} type="audio/mpeg"/>
+            </audio>
+        </div>
+    </div>
 )
 }
 
