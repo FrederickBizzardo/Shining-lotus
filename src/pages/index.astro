@@ -1,5 +1,5 @@
 ---
-import MyComponent from '../components/myComponent';
+import Celebration from '../components/Celebration.jsx';
 import '../assets/fonts.css';
 ---
 
@@ -10,25 +10,21 @@ import '../assets/fonts.css';
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>Shining Light</title>
 		<style>
-			@font-face {
-				font-family: 'Onest-Black';
-				src: url('/public/fonts/Onest/Onest-Black.ttf')
-			}
 			html,
 			body {
 				font-family: system-ui;
-				//font-family: "Onest-Black";
 				margin: 0;
 			}
 			body {
-				padding: 2rem;
+				//padding: 2rem;
 			}
 		</style>
 	</head>
 	<body>
 	  <main>
-	    <MyComponent />
+	    <Celebration client:visible />
 	  </main>
 	</body>
 </html>
