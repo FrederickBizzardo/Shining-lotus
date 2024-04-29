@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 import { motion } from 'framer-motion';
 import Header from '../components/Header.jsx';
-import ImageScraper from '../components/ImageScraper.jsx';
+import ImageScraper from '../components/ImageScraper.jsx'
 // import { useInView } from 'react-intersection-observer';
-// import { JSDOM } from 'jsdom';
+
 import '../assets/fonts.css';
 
 //import gsap from "gsap";
@@ -27,8 +27,8 @@ console.log(data);
 const titles = day.map(celebration => celebration.title);
 console.log(titles);
 
-/*
-const searchQuery = titles.join(' ');
+
+/*const searchQuery = titles.join(' ');
 const searchLink = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
 
 
@@ -71,8 +71,8 @@ console.log('Rosary MP3 Links:', rosaryDown);
 
 
 /*function SlideInRight({ children }) {
-    const controls = useAnimation();
-    const [ref, inView] = useInView();
+const controls = useAnimation();
+const [ref, inView] = useInView();
 
     useEffect(() => {
         if (inView) {
@@ -104,25 +104,25 @@ console.log('Rosary MP3 Links:', rosaryDown);
 }*/
 
 
-export default function Celebration() {
-    //const [titles, setTitles] = useState([]);
-    //const [rosary, setRosaries] = useState([]);
-    //const [rosaryDown, setRosaryDowns] = useState([]);
-    //useEffect(() => {
-    //    async function fetchData() {
+export default function Celebration(props) {
+/*const [titles, setTitles] = useState([]);
+const [rosary, setRosaries] = useState([]);
+const [rosaryDown, setRosaryDowns] = useState([]);
+useEffect(() => {
+async function fetchData() {
 
-    //            try {
-                    /*const response = await fetch('http://calapi.inadiutorium.cz/api/v0/en/calendars/default/today');
+                try {
+                    const response = await fetch('http://calapi.inadiutorium.cz/api/v0/en/calendars/default/today');
                     const data = await response.json();
                     const day = data.celebrations;
                     console.log(data);
                     const titles = day.map(celebration => celebration.title);
-                    console.log(titles);*/
+                    console.log(titles);
                     // setTitles(titles);
 
 
-                    //const searchQuery = titles.join(' ');
-                    //const searchLink = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
+                    const searchQuery = titles.join(' ');
+                    const searchLink = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
 
                     /*const googleResponse = await fetch(searchLink);
                     const googleHtml = await googleResponse.text();
@@ -157,11 +157,11 @@ export default function Celebration() {
 
     return (
         <main className="">
-
+            {props.children}
 
             <div className="h-screen bg-no-repeat bg-cover bg-center m-0"
                  style={{backgroundImage: `url('/images/jesus.jpeg')`}}></div>
-                <Header />
+                <Header client:visible/>
                 <motion.h1 animate={{ x: 100 }} className="absolute box top-60 left-5 font-OnestB text-8xl text-white">
                     Shining Bright
                 </motion.h1>
@@ -179,7 +179,7 @@ export default function Celebration() {
             <div className="flex">
                 <p className="font-Onest italic mb-5">{titles.join(', ')}</p>
                 {/*<img className=" w-1/3 rounded-lg" src={urls[3]} alt="First Image"/>*/}
-                <ImageScraper />
+                {/*<ImageScraper client:load />*/}
         </div>
     </div>
     <div className="text-center">
