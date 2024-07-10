@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/Header.jsx';
 import ImageScraper from '../components/ImageScraper.jsx';
+import Rosary from "../components/Rosary.jsx";
 // import { useInView } from 'react-intersection-observer';
 // import { JSDOM } from 'jsdom';
 import '../assets/fonts.css';
@@ -183,11 +184,7 @@ export default function Celebration() {
         </div>
     </div>
     <div className="text-center">
-        <h1 className="font-black text-4xl mt-30 mb-2">Rosary</h1>
-        {/*<p className="italic text-2xl">{rosary.join(', ')} Mysteries</p>
-        <audio controls>
-            <source src={rosaryDown} type="audio/mpeg"/>
-        </audio>*/}
+        <Rosary/>
     </div>
 
         </main>

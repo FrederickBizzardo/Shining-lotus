@@ -19,20 +19,10 @@ const searchQuery = titles.join(' ');
 const searchLink = `https://www.google.com/search?tbm=isch&q=${encodeURIComponent(searchQuery)}`;
 
 
-// DO NOT DELETE THIS CODE IT PARTLY WORKS
+    const googleResponse = await fetch(searchLink);
+    const googleHtml = await googleResponse.text();
 
-const googleResponse = await fetch(searchLink);
-const googleHtml = await googleResponse.text();
-/*
-const dom = new JSDOM(googleHtml);
-
-const imageElements = dom.window.document.querySelectorAll('img');
-const urls = Array.from(imageElements).map(img => img.getAttribute('src'));
-
-console.log('Google search results link:', searchLink);
-console.log('Image URLs:', urls);*/
-
-const getGoogleImages = (googleHtml) => {
+    const getGoogleImages = (googleHtml) => {
     const imageUrls = [];
     const regex = /<img[^>]+src="([^">]+)/g;
     let match;
@@ -59,3 +49,16 @@ export default function ImageScraper() {
     )
 }
 ;
+
+// DO NOT DELETE THIS CODE IT PARTLY WORKS
+/*
+const googleResponse = await fetch(searchLink);
+const googleHtml = await googleResponse.text();
+
+const dom = new JSDOM(googleHtml);
+
+const imageElements = dom.window.document.querySelectorAll('img');
+const urls = Array.from(imageElements).map(img => img.getAttribute('src'));
+
+console.log('Google search results link:', searchLink);
+console.log('Image URLs:', urls);*/
